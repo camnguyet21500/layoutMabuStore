@@ -3,13 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
+
+
 /*HEADER*/
 .icon a{
   color: black;
 }
 
 .icon a:hover{
-  color: #ffa6a8;
+  color: #f9af47;
 }
 
 body{
@@ -62,7 +64,7 @@ body{
 }
 
 .dropdown-item:hover {
-  color: #ffa6a8;
+  color: #f9af47;
   background: white;
 }
 
@@ -261,6 +263,38 @@ body{
 .slideInRight {
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight;
+}
+
+/* LOGIN */
+.login{
+  display: inline-block;
+}
+
+.login input{
+  margin: 20px 10px 20px 0;
+  display: inline-block;
+}
+
+.button{
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 18px 65px;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+  letter-spacing: .2em;
+  font-weight: 500;
+  position: relative;
+  border-radius: 0;
+  transition: .3s;
+}
+
+.button:hover{
+  background-color: #f9af47;
+  color: white;
+  color: black;
 }
 
 /*CARD*/
@@ -477,5 +511,5 @@ body{
 }
 
 .content a:hover{
-  color: #ffa6a8;
+  color: #f9af47;
 }

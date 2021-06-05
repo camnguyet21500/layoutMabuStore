@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Product | Mabu Store</title>
 
+    <!--CDN CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <!--JS library-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
-
-    <!--Bootstrap CSS-->
-    <script src="lib/js/bootstrap.min.js"></script>
-
-    <!--Bootstrap JS-->
-    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
-
-    <!--CSS-->
-    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-</head>
+    <!-- ION ICON -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
+    
+    <!--Angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/product_details.css">
+</head>
 <body>
     <!--HEADER-->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white">
             <div class="container-fluid container-fluid-v1">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -41,8 +50,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <div class="dropdown">
-                            <a class="nav-link text-body" href="index.html" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HOME</a>
+                            <a class="nav-link text-body" href="index.html" id="navbarDropdown" role="button">HOME</a>
                         </div>
                         <div class="dropdown">
                             <a class="nav-link text-body" href="#" id="navbarDropdown" role="button"
@@ -222,86 +230,7 @@
                 <img src="img/logoblack.jpg" width="5%" style="margin-right: 450px;">
                 <div class="icon" style="display: inherit">
                     <i class="fas fa-search"></i>
-
-                    <!-- LOGIN -->
-                    <!-- Button trigger modal -->
-                    <i class="far fa-user" data-toggle="modal" data-target="#exampleModalCenter">
-
-                    </i>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content" style="text-align: center;">
-                                <div class="modal-body" style="text-align: center; padding: 50px;">
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#home">LOGIN</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#signup">SIGN UP</a>
-                                        </li>
-                                    </ul>
-
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div id="home" class=" tab-pane active"><br>
-                                            <h3 style="font-size: 36px;
-font-weight: 600;">MABU</h3>
-                                            <hr>
-                                            <p>Great to have you back!</p>
-                                            <form>
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                                        aria-describedby="emailHelp" placeholder="Email address">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="password" class="form-control"
-                                                        id="exampleInputPassword1" placeholder="Password">
-                                                </div>
-                                                <div class="login">
-                                                    <input type="submit" class="button" value="LOG IN"
-                                                        name="update_cart">
-                                                </div>
-                                                <div>
-                                                    <p>or login with</p>
-                                                    <img src="img/logo_google.png" alt="" style="width: 8%;">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div id="signup" class=" tab-pane fade"><br>
-                                            <h3 style="font-size: 36px;
-font-weight: 600;">MABU</h3>
-                                            <hr>
-                                            <p>Sign up for an account for a better experience!</p>
-                                            <form>
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                                        aria-describedby="emailHelp" placeholder="Email address">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="password" class="form-control"
-                                                        id="exampleInputPassword1" placeholder="Password">
-                                                </div>
-                                                <div class="login">
-                                                    <input type="submit" class="button" value="LOG IN"
-                                                        name="update_cart">
-                                                </div>
-                                                <div>
-                                                    <p>or sign up with</p>
-                                                    <img src="img/logo_google.png" alt="" style="width: 8%;">
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END LOGIN -->
-
+                    <i class="far fa-user"></i>
                     <i class="far fa-heart"></i>
                     <a href="cart.html"><i class="fas fa-dolly"></i></a>
                 </div>
@@ -309,254 +238,73 @@ font-weight: 600;">MABU</h3>
         </nav>
     </header>
     <!--HEADER END-->
-
-    <!--SLIDER-->
-    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" style="background-color: #ecd9c8;">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="mask flex-center">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4 style="color: black;">Present your <br>
-                                    awesome product</h4>
-                                <p style="color: black;">Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis
-                                    quidem rerum <br>
-                                    necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                                <a href="#">BUY NOW</a>
-                            </div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="img/slider2.png" class="mx-auto"
-                                    alt="slide"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="mask flex-center">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4 style="color: black;">Present your <br>
-                                    awesome product</h4>
-                                <p style="color: black;">Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis
-                                    quidem rerum <br>
-                                    necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                                <a href="#">BUY NOW</a>
-                            </div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="img/slider1.png" class="mx-auto"
-                                    alt="slide"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="mask flex-center">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4 style="color: black;">Present your <br>
-                                    awesome product</h4>
-                                <p style="color: black;">Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis
-                                    quidem rerum <br>
-                                    necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                                <a href="#">BUY NOW</a>
-                            </div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="img/slider3.png   "
-                                    class="mx-auto" alt="slide"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"
-            style="top: 300px; width: 45px;">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"
-            style="top: 300px; width:45px">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <!--SLIDE END -->
-
-    <!--CARD-->
-    <div class="card-content">
-        <div class="card card-one text-center">
-            <img src="img/card1.png" class="card-img-top">
-            <div class="card-body">
-                <h4 class="card-title">24/7 FRIENDLY SUPPORT</h4>
-                <p class="card-text">Our support team alway ready for you to 7 day a week</p>
-            </div>
-        </div>
-        <div class="card card-two text-center">
-            <img src="img/card2.png" class="card-img-top">
-            <div class="card-body">
-                <h4 class="card-title">FREE SHIPPING</h4>
-                <p class="card-text">Free worldwide shipping on all area order above $100</p>
-            </div>
-        </div>
-        <div class="card card-three text-center">
-            <img src="img/card3.png" class="card-img-top">
-            <div class="card-body">
-                <h4 class="card-title">QUALITY GUARANTEED</h4>
-                <p class="card-text">Our Buyer Protection covers your purchase from click to delivery.</p>
-            </div>
-        </div>
-    </div>
-    <!--CARD END-->
-
-    <!--SHOPIFY-->
-    <div class="shopify">
-        <div class="text-center">
-            <h3 class="title-heading">
-                Best Sellers
-            </h3>
-            <span class="sub-heading">
-                Don't Miss Today's Featured Deals
-            </span>
-        </div>
+    
+    <!-- PRODUCT -->
+    <div class="bread_crumb">
+        <a href="index.html"><b>Home</b></a>
+        <span> > Sneaker earth - hight top -goat</span>
         <div class="product">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="product-item">
-                        <a href="product.html">
-                            <img src="img/shopify1.png">
-                        </a>
+            <img src="img/shopify1.png" width="50%">
+            <div class="infor_product">
+                <div class="name">
+                    Sneaker Earth - Hight Top -Goat
+                </div>
+                <div class="old_price">
+                    $ 550.00
+                </div>
+                <div class="new_price">
+                    $ 500.00
+                </div>
+                <div class="vote">
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>No reviews</span>
+                </div>
+                <hr>
+                <div class="summary">
+                    Off-White Arrow Vulcanized low-top sneakers Leave it to Off-White to take your streetwear game to a whole new level. Crafted from leather, these multicoloured Arrow Vulcanized low-top sneakers from Off-White are decorated with a signature Arrows motif to the side and the brand's signature red security tag, making them the...
+                </div>
+                <div class="active">
+                    <div class="js-qty">
+                        <button class="qty-minus" ng-click="minus(item.id)" type="button">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="text" class="js-qty-num" type="number" value="1"
+                            aria-label="quantity" pattern="[0-9]*" name="quantity">
+                        <button class="qty-plus" type="button" ng-click="add(item.id)">
+                            <i class="fas fa-plus"></i>
+                        </button>
                     </div>
-                    <div class="product-info">
-                        <h4>Sneaker earth - hight top -goat</h4>
-                        <span>$500.00</span>
+                    <div class="addtocart">
+                        <a href="">ADD TO CART</a>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="product-item">
-                        <img src="img/shopify2.png">
-                    </div>
-                    <div class="product-info">
-                        <h4>SB Chron British Tan</h4>
-                        <span>$500.00</span>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="product-item">
-                        <img src="img/shopify3.png">
-                    </div>
-                    <div class="product-info">
-                        <h4>Converse Chuck Taylor Star</h4>
-                        <span>$500.00</span>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="product-item">
-                        <img src="img/shopify4.png">
-                    </div>
-                    <div class="product-info">
-                        <h4>Converse Unisex Shoes</h4>
-                        <span>$500.00</span>
-                    </div>
+                <div class="buyitnow">
+                    <input type="submit" class="button" value="BUY IT NOW" name="update_cart">
                 </div>
             </div>
-        </div>
-        <!-- </div> -->
-    </div>
-    <!--END SHOPIFY-->
-
-    <!--BANNER-->
-    <div class="banner">
-        <div class="row text-center bannerbottom">
-            <div class="col-sm">
-                <img src="img/banner1.png">
-            </div>
-            <div class="col-sm">
-                <img src="img/banner2.png">
-            </div>
-        </div>
-
-        <div class="text-center bannertop">
-            <h3 class="title-heading">
-                Street Collection
-            </h3>
-            <span>
-                JUST FOR YOU
-            </span>
-            <p href="" style="margin-top:55px">
-                SHOP NOW
-            </p>
-        </div>
-    </div>
-    <!--END BANNER-->
-
-    <!--INSPIRATION-->
-    <div class="inspiration">
-        <div class="text-center">
-            <h3 class="title-heading">
-                INSPIRATION
-            </h3>
-            <span class="sub-heading">
-                Our beloved beauty experts will wow your brows, get you glowing and so much more
-            </span>
-        </div>
-        <div class="blog">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="blog-item">
-                        <img src="img/blog1.png">
-                    </div>
-                    <div class="blog-info">
-                        <h3>
-                            Sneaker Freaker Shoes Van
-                        </h3>
-                        <span>
-                            Dancing Shoes from Mr.Klesha animation on Vimeo. The Australian independent magazine has
-                            become a staple for sneaker news predating back to its...
-                        </span>
+            <div class="content">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Why Choose Us ?</h5>
+                      <hr>
+                      <p class="card-text">Official Herschel stockist Australian warranty assistance & support Australian shipping & returns.Customer first experience environmentally focused</p>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="blog-item">
-                        <img src="img/blog2.png">
-                    </div>
-                    <div class="blog-info">
-                        <h3>
-                            Sneaker Freaker Shoes
-                        </h3>
-                        <span>
-                            It's BL'EVE! · PAYROLL feat. Jimmy 2Shoes (Prod by Platinum Beat Service) The Australian
-                            independent magazine has become a staple for...
-                        </span>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="blog-item">
-                        <img src="img/blog3.png">
-                    </div>
-                    <div class="blog-info">
-                        <h3>
-                            Sneaker Freaker Shoes
-                        </h3>
-                        <span>
-                            The Australian independent magazine has become a staple for sneaker news predating back to
-                            its 2002 print launch. Adapting with the times,...
-                        </span>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Why Choose Us ?</h5>
+                      <hr>
+                      <p class="card-text">Official Herschel stockist Australian warranty assistance & support Australian shipping & returns.Customer first experience environmentally focused</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--END INSPIRATION-->
-
-    <!--INSTAGRAM-->
-    <div class="instagram text-center">
-        <img src="img/instagram.png">
-        <h3>
-            SHOP INSTAGRAM
-        </h3>
-        <span>
-            News & updates from NiverStore. No spam, we promise.
-        </span>
-    </div>
-    <!--END INSTAGRAM-->
+    <!-- END PRODUCT -->
 
     <!--FOOTER-->
     <footer class="footer mt-5">
@@ -700,8 +448,6 @@ font-weight: 600;">MABU</h3>
             </div>
         </div>
     </footer>
-
     <!--END FOOTER-->
 </body>
-
 </html>

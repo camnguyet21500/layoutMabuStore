@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product | Mabu Store</title>
 
@@ -29,15 +29,19 @@
 
     <!-- ION ICON -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.2.3/ionicons.min.js"></script>
-    
+
     <!--Angular-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/product.css">
+    
+    <!-- JS -->
+    <script src="js/cart.js"></script>
 </head>
-<body>
-    <!--HEADER-->
+
+<body ng-app="myApp">
+    <!-- HEADER -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white">
             <div class="container-fluid container-fluid-v1">
@@ -236,75 +240,434 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <!--HEADER END-->
-    
-    <!-- PRODUCT -->
-    <div class="bread_crumb">
-        <a href="index.html"><b>Home</b></a>
-        <span> > Sneaker earth - hight top -goat</span>
-        <div class="product">
-            <img src="img/shopify1.png" width="50%">
-            <div class="infor_product">
-                <div class="name">
-                    Sneaker Earth - Hight Top -Goat
-                </div>
-                <div class="old_price">
-                    $ 550.00
-                </div>
-                <div class="new_price">
-                    $ 500.00
-                </div>
-                <div class="vote">
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <span>No reviews</span>
-                </div>
-                <hr>
-                <div class="summary">
-                    Off-White Arrow Vulcanized low-top sneakers Leave it to Off-White to take your streetwear game to a whole new level. Crafted from leather, these multicoloured Arrow Vulcanized low-top sneakers from Off-White are decorated with a signature Arrows motif to the side and the brand's signature red security tag, making them the...
-                </div>
-                <div class="active">
-                    <div class="js-qty">
-                        <button class="qty-minus" ng-click="minus(item.id)" type="button">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <input type="text" class="js-qty-num" type="number" value="1"
-                            aria-label="quantity" pattern="[0-9]*" name="quantity">
-                        <button class="qty-plus" type="button" ng-click="add(item.id)">
-                            <i class="fas fa-plus"></i>
-                        </button>
+        <div class="bgr">
+            <div class="jumbotron jumbotron-fluid">
+                <h1 class="display-4" style="font-weight: 500;
+                letter-spacing: 2px;">Product</h1>
+                <p class="lead">
+                    <a href="">Home</a> > Products
+                </p>
+                <div class="container">
+                    <div class="img_banner">
+                        <div class="items">
+                            <img src="img/container_product1.jpg" alt="">
+                            <div class="text_banner">
+                                <a href="">ALL ITEMS</a>
+                            </div>
+                        </div>
+                        
+                        <div class="items">
+                            <img src="img/container_product2.jpg" alt="">
+                            <div class="text_banner">
+                                <a href="">HOT TREND</a>
+                            </div>
+                        </div>
+                        
+                        <div class="items">
+                            <img src="img/container_product3.jpg" alt="">
+                            <div class="text_banner">
+                                <a href="">BEST SELLER</a>
+                            </div>
+                        </div>
+
+                        <div class="items">
+                            <img src="img/container_product4.jpg" alt="">
+                            <div class="text_banner">
+                                <a href="">FASHION</a>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- <img src="img/container_product5.jpg" alt=""> -->
+                        <!-- <img src="img/container_product6.jpg" alt="">
+                        <img src="img/container_product7.jpg" alt="">
+                        <img src="img/container_product8.jpg" alt=""> -->
                     </div>
-                    <div class="addtocart">
-                        <a href="">ADD TO CART</a>
-                    </div>
-                </div>
-                <div class="buyitnow">
-                    <input type="submit" class="button" value="BUY IT NOW" name="update_cart">
                 </div>
             </div>
-            <div class="content">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Why Choose Us ?</h5>
-                      <hr>
-                      <p class="card-text">Official Herschel stockist Australian warranty assistance & support Australian shipping & returns.Customer first experience environmentally focused</p>
+        </div>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- ITEMS -->
+    <div class="filter">
+        <a href="" class="btnfilter"><i class="fas fa-filter"></i>FILTER</a>
+    </div>
+    <div id="Accessories" >
+        <div class="tab-pane fade active show">
+            <div class="row" style="padding-left: 50px; padding-right: 50px;">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product1.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                Adidas Stan Smith Shoes
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 400.00 
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Why Choose Us ?</h5>
-                      <hr>
-                      <p class="card-text">Official Herschel stockist Australian warranty assistance & support Australian shipping & returns.Customer first experience environmentally focused</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product2.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                Converse Chuck Taylor All
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 300.00 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product3.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                Converse Chuck Taylor C
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 300.00 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product4.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                Converse Chuck Taylor Star
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 500.00 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-left: 50px; padding-right: 50px;">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product5.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                <!-- Button trigger modal -->
+                                <div data-toggle="modal" data-target="#exampleModalCenter">
+                                    Converse Unisex Shoes
+                                </div>
+                                
+                                <!-- Modal -->
+                                <div  class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div style="justify-content: center;" class="modal-dialog modal-dialog-centered" role="document">
+                                        <div style="width: 1000px;" class="modal-content">
+                                            <div style="width: 1000px;" class="modal-body">
+                                                <div class="bread_crumb">
+                                                    <div class="product">
+                                                        <img src="img/shopify1.png" width="50%">
+                                                        <div class="infor_product">
+                                                            <div class="name">
+                                                                Sneaker Earth - Hight Top -Goat
+                                                            </div>
+                                                            <div class="old_price">
+                                                                $ 550.00
+                                                            </div>
+                                                            <div class="new_price">
+                                                                $ 500.00
+                                                            </div>
+                                                            <div class="vote">
+                                                                <i class="far fa-star"></i>
+                                                                <i class="far fa-star"></i>
+                                                                <i class="far fa-star"></i>
+                                                                <i class="far fa-star"></i>
+                                                                <i class="far fa-star"></i>
+                                                                <span>No reviews</span>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="summary">
+                                                                Off-White Arrow Vulcanized low-top sneakers Leave it to Off-White to take your streetwear game to a whole new level. Crafted from leather, these multicoloured Arrow Vulcanized low-top sneakers from Off-White are decorated with a signature Arrows motif to the side and the brand's signature red security tag, making them the...
+                                                            </div>
+                                                            <div class="active">
+                                                                <div class="js-qty">
+                                                                    <button class="qty-minus" ng-click="minus(item.id)" type="button">
+                                                                        <i class="fas fa-minus"></i>
+                                                                    </button>
+                                                                    <input type="text" class="js-qty-num" type="number" value="1"
+                                                                        aria-label="quantity" pattern="[0-9]*" name="quantity">
+                                                                    <button class="qty-plus" type="button" ng-click="add(item.id)">
+                                                                        <i class="fas fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="addtocart">
+                                                                    <a href="">ADD TO CART</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="buyitnow">
+                                                                <input type="submit" class="button" value="BUY IT NOW" name="update_cart">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 300.00 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product6.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                Flight Club Air Uptempo
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 700.00 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product7.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                McDonald’s Adidas Dame
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 700.00 
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-6 product-tab-pd" style="display: flex;">
+                    <div class="product-item-v1" >
+                        <div class="product mb-30 engoj_grid_parent relative">
+                            <div class="img-product relative">
+                                <div class="engoj_find_img" href="">
+                                    <img src="img/product8.jpg" alt="" style="width: 100%; ">
+                                    <!-- <ul>
+                                        <li class="choose_heart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="heart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_cart">
+                                            <a href="">
+                                                <ion-icon class="icon" name="cart-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                        <li class="choose_search">
+                                            <a href="">
+                                                <ion-icon class="icon" name="search-outline"></ion-icon>
+                                            </a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-product">
+                            <h4 class="des-font capital title-product mb-0 flex">
+                                Nike Air Max 97
+                            </h4>
+                            <p class="price-product">
+                                <span class="price">
+                                    $ 400.00 
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- END PRODUCT -->
+    <div class="loadmore">
+        <a href="" class="btnloadmore">LOAD MORE</a>
+    </div>
+    <!-- END ITEMS -->
 
     <!--FOOTER-->
     <footer class="footer mt-5">
@@ -445,9 +808,13 @@
                     </div>
                     <p></p>
                 </div>
+                <!-- <div class="col-lg-6 col-md-6 text-md-right">
+                    <img src="images/paymet.jpg" alt="" style="justify-content: right;">
+                </div> -->
             </div>
         </div>
     </footer>
     <!--END FOOTER-->
 </body>
+
 </html>
